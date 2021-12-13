@@ -1,0 +1,30 @@
+TO-DO list
+
+
+Complete all parts of the google doc:
+Question A- Incomplete
+Question B- Incomplete
+Question C- Incomplete
+Question D- Incomplete
+Question E- Incomplete
+Video of game under 60 seconds- Incomplete
+
+Ensure program meets all requirements according to Google Doc:
+Allow for user input- Complete
+Use color and movement- Incomplete
+Use list indexing- Incomplete
+Manipulate strings- Complete
+Respond to events- Incomplete
+Reduce Duplication of code by using functions- WIP
+
+Features:
+Add instructions to the game- WIP
+Add screen for graphical display- Incomplete
+Add grid- Incomplete
+Add user input to determine where they want there ships- Incomplete
+Figure out how enemy ships work and do that- Incomplete
+Let enemy fire back- Incomplete
+Abstract a ton of stuff to different files to not clog up main- WIP
+Track hits and misses and ship sinks- Incomplete
+Track if a player wins the game- Incomplete
+
