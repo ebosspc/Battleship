@@ -45,7 +45,11 @@ if instructions_request == 1:
 
 # Don't print the instructions if the user doesn't want them
 elif instructions_request == 0:
-    print("Welcome back!")
+    print("\nWelcome back!")
+
+# Output message for debugging if the user is in developer mode
+if developer_mode == 1:
+    print("You are running this program as a developer")
 
 # Inform the user the game is starting
-print("Lets start the game!")
+print("\nLets begin!")
