@@ -18,6 +18,7 @@ Respond to events- WIP
 Reduce Duplication of code by using functions- WIP
 
 Features:
+Add developer mode and instructions request inputs- Complete (Ethan)
 Add instructions to the game- WIP
 Add screen for graphical display- Incomplete
 Add grid- Incomplete
