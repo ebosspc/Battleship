@@ -8,6 +8,7 @@ import random as rand
 # Import welcome module storing insturctions and welcome functions
 import welcome as welcome
 
+#####-Instructions and Welcome Handling-#####
 # Call the function to welcome the user to the game
 welcome.welcome_user()
 
