@@ -5,19 +5,19 @@ def welcome_user():
     # Get the user's name as an input, store it in a variable and then print out a welcome message using that name
     print("-----Welcome to the game!-----\n")
     usr_name = str(input("Please enter your name here: "))
-    print("Welcome to the game", usr_name +"!\n")
+    print("Welcome to battleship!", usr_name +"!\n")
 
 
-#Define a function to print the instructions for the game
+# Define a function to print the instructions for the game if the user requests them
 def print_instructions():
-    #Explain to users some basic info about the game
+    # Explain to users some basic info about the game
     print("\n-Game Info-")
-    print("This game is a 2 player chess game with all of the rules of normal chess.")
-    print("Be sure to find a partner to play with, as playing by yourself is rather boring.")
+    print("")
+    print("")
 
     #Explain the rules of the game, like how each piece moves
     print("\n-Rules-")
-    print("Like with normal chess, there are 8 pawns, 2 rooks, 2 knights, 2 bishops, a queen, and a king on each side.")
+    print("")
     print("Each player has to pick one side: either white or black.")
     print("Each player is allowed 1 legal move per turn with any piece.")
     print("Pawns can only move forward 1 space, except if it is theirvery first move. If so, they can move forward 2 spaces.")
