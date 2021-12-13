@@ -14,7 +14,7 @@ Allow for user input- Complete
 Use color and movement- Incomplete
 Use list indexing- Incomplete
 Manipulate strings- Complete
-Respond to events- Incomplete
+Respond to events- WIP
 Reduce Duplication of code by using functions- WIP
 
 Features:
