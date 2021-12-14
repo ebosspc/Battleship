@@ -54,3 +54,13 @@ if developer_mode == 1:
 
 # Inform the user the game is starting
 print("\nLets begin!")
+
+
+#####-Game Config-#####
+
+
+#####-Setup-#####
+
+
+#####-Game Handling-#####
+
