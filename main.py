@@ -57,16 +57,18 @@ print("\nLets begin!")
 
 
 #####-Game Config-#####
-#Define variables that will determine the size and shape of the battleship grid
+# Define variables that will determine the size and shape of the battleship grid
 number_of_sides = 4
-number_of_squares = 100
-number_of_squares_on_side = number_of_squares / 10
+number_of_squares = 64
+squares_per_side = 8
+number_of_squares_on_side = number_of_squares / squares_per_side
 width_of_side = 520
-width_of_square = width_of_side / 10
+width_of_square = width_of_side / squares_per_side
 
-#Define coordinates on the turtle graphics grid for every single square
-a1_xcor = -260 + 0.5 * width_of_square
-a1_ycor = -260 + 0.5 * width_of_square
+# Define coordinates on the turtle graphics grid for every single square
+# This will be defining the locations of squares the user will be interacting with
+a1_xcor = (-0.5 * width_of_side) + (0.5 * width_of_square)
+a1_ycor = (-0.5 * width_of_side) + (0.5 * width_of_square)
 a1_cors = a1_xcor, a1_ycor
 
 # Define a2's coordinates
@@ -385,7 +387,18 @@ h8_ycor = h7_ycor + width_of_square
 h8_cors = h8_xcor, h8_ycor
 
 #####-Setup-#####
+# Define a variable to store the graphical display in and set its background to an imported gif
+wn = trtl.Screen()
+wn.bgpic("background.gif")
+
+# Import the necessary functions and objects and draw the grid
+import grid as grid
+grid.draw_grid()
 
 
 #####-Game Handling-#####
 
+
+
+# Keep display running and persistent
+wn.mainloop()
