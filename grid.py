@@ -30,9 +30,10 @@ def set_painter_attributes():
     #For loop that will give all painters the same attributes
     for i in range(len(master_painters_list)):
         master_painters_list[i].penup()
-        # master_painters_list[i].hideturtle()
+        master_painters_list[i].hideturtle()
         master_painters_list[i].shape("classic")
         master_painters_list[i].pencolor("black")
+        master_painters_list[i].pensize(2)
         master_painters_list[i].fillcolor("black")
         master_painters_list[i].speed(0)
         master_painters_list[i].shapesize(1)
@@ -44,7 +45,7 @@ def set_painter_attributes():
 
 # Define a function to draw the borders of the grid
 def draw_borders():
-    print("drawing border")
+    # For loop to draw the border
     for i in range(3):
         grid_painter.pendown()
         grid_painter.forward(width_of_side)
@@ -53,7 +54,7 @@ def draw_borders():
 
 # Define a function to draw the vertical lines
 def draw_vert_lines():
-    print("drawing vert lines")
+    # For loop to draw the vertical lines
     for i in range(4):
         grid_painter.forward(width_of_side)
         grid_painter.left(90)
@@ -67,7 +68,7 @@ def draw_vert_lines():
 
 # Define a function to draw the horizontal lines
 def draw_horiz_lines():
-    print("drawing horiz lines")
+    # For loop to draw the horizontal lines
     for i in range(4):
         grid_painter.forward(width_of_square)
         grid_painter.right(90)
@@ -84,6 +85,7 @@ def draw_labels():
 
     #For loop to draw all of the letters and numbers on the board
     for i in range(number_of_sides):
+        # Draw the letters on the bottom
         if i < 1:
             #For loop to label the bottom row of the chessboard with letters
             for a in range(int(number_of_squares_on_side)): 
@@ -91,6 +93,7 @@ def draw_labels():
                 label_painter.write(grid_letters_list[a], align = "center", font = ("Times New Roman", 20, "normal"))
                 label_painter.forward(width_of_square)
 
+        # Draw the numbers on the right
         elif i < 2:    
             #Move and turn the labeler turtle to the appropriate position
             label_painter.setheading(180)
@@ -104,6 +107,7 @@ def draw_labels():
                 label_painter.write(grid_numbers_list[b], align = "center", font = ("Times New Roman", 20, "normal"))
                 label_painter.forward(width_of_square)
 
+        # Draw the letters on the top
         elif i < 3:
             #Move and turn the labeler turtle to the appropriate position
             label_painter.goto(-228, 260)
@@ -115,6 +119,7 @@ def draw_labels():
                 label_painter.write(grid_letters_list[c], align = "center", font = ("Times New Roman", 20, "normal"))
                 label_painter.forward(width_of_square)
         
+        # Draw the numbers on the left
         elif i < 4:
             #Move and turn the labeler turtle to the appropriate position
             label_painter.goto(-275, -245)
@@ -126,10 +131,8 @@ def draw_labels():
                 label_painter.write(grid_numbers_list[d], align = "center", font = ("Times New Roman", 20, "normal"))
                 label_painter.forward(width_of_square)
 
-    #Ensure the pen is down because the trails will make the board
+    #Ensure the pen is down because the trails will make the board and hide the turtle when its finished
     label_painter.pendown()
-
-    #Hide the label drawing turtle when it is done drawing the labels
     label_painter.hideturtle()
 
 
@@ -137,9 +140,15 @@ def draw_labels():
 def draw_grid():
     # Set the attributes of the painters before drawing
     set_painter_attributes()
+
+    # Draw the borders of the grid
     draw_borders()
+
+    # Draw the lines of the grid
     draw_vert_lines()
     draw_horiz_lines()
+
+    # Draw the labels of the grid
     draw_labels()
 
     
