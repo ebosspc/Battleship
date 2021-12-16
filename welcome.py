@@ -11,12 +11,11 @@ def welcome_user():
 
 # Define a function to print the instructions for the game if the user requests them
 def print_instructions():
-    # Explain to users some basic info about the game
     print("\n-Game Info-")
-
-    #Explain the rules of the game, like how each piece moves
-    print("\n-Rules-")
-    
-    #Describe the objective of the game
-    print("\n-Objective-")
+    print("After choosing a cool username and placing your ships on the desired coordinates,")
+    print("You will be tasked with taking down your opponent's ships.")
+    print("To do this, you must guess the coordinates of their ships.")
+    print("For example, if you believe that one of their ships is on b4, you will simply type 'b4'.")
+    print("If you have guessed correctly, the chosen square will turn red.")
+    print("However, if you have guessed incorrectly, an image of the ocean will appear.")
     
