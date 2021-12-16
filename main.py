@@ -57,6 +57,366 @@ print("\nLets begin!")
 
 
 #####-Game Config-#####
+# Define a function that will create the grid that the user will set as their own ships
+def create_user_grid():
+    # https://trinket.io/python/051179b6d3
+    squares_per_side = 8
+
+    #Define an empty list that will contain the locations of the user's ships
+    # A 0 corresponds to no ship at that location
+    # A 1 corresponds to a ship at that location
+    # An X stands for a hit ship at that location
+    # The notation will not change for a miss
+    global player_grid
+    player_grid = []
+
+    global column_a,column_b,column_c,column_d,column_e,column_f,column_g,column_h
+    column_a = 0
+    column_b = 1
+    column_c = 2
+    column_d = 3
+    column_e = 4
+    column_f = 5
+    column_g = 6
+    column_h = 7
+
+    global row_1,row_2,row_3,row_4,row_5,row_6,row_7,row_8
+    row_1 = 7
+    row_2 = 6
+    row_3 = 5
+    row_4 = 4
+    row_5 = 3
+    row_6 = 2
+    row_7 = 1
+    row_8 = 0
+
+    # For loop to generate all values in the grid
+    for i in range(squares_per_side):
+        player_grid.append(["O"] * squares_per_side)
+
+
+# Define a function to set the initial user ship selection
+def set_user_ship_properties():
+    # Globalize and define ship tracker variables for the a squares so they can be used in other functions
+    global ship_on_a1,ship_on_a2,ship_on_a3,ship_on_a4,ship_on_a5,ship_on_a6,ship_on_a7,ship_on_a8
+    ship_on_a1 = 0
+    ship_on_a2 = 0
+    ship_on_a3 = 0
+    ship_on_a4 = 0
+    ship_on_a5 = 0
+    ship_on_a6 = 0
+    ship_on_a7 = 0
+    ship_on_a8 = 0
+
+    # Globalize and define ship tracker variables for the b squares so they can be used in other functions
+    global ship_on_b1,ship_on_b2,ship_on_b3,ship_on_b4,ship_on_b5,ship_on_b6,ship_on_b7,ship_on_b8
+    ship_on_b1 = 0
+    ship_on_b2 = 0
+    ship_on_b3 = 0
+    ship_on_b4 = 0
+    ship_on_b5 = 0
+    ship_on_b6 = 0
+    ship_on_b7 = 0
+    ship_on_b8 = 0
+
+    # Globalize and define ship tracker variables for the c squares so they can be used in other functions
+    global ship_on_c1,ship_on_c2,ship_on_c3,ship_on_c4,ship_on_c5,ship_on_c6,ship_on_c7,ship_on_c8
+    ship_on_c1 = 0
+    ship_on_c2 = 0
+    ship_on_c3 = 0
+    ship_on_c4 = 0
+    ship_on_c5 = 0
+    ship_on_c6 = 0
+    ship_on_c7 = 0
+    ship_on_c8 = 0
+
+    # Globalize and define ship tracker variables for the d squares so they can be used in other functions
+    global ship_on_d1,ship_on_d2,ship_on_d3,ship_on_d4,ship_on_d5,ship_on_d6,ship_on_d7,ship_on_d8
+    ship_on_d1 = 0
+    ship_on_d2 = 0
+    ship_on_d3 = 0
+    ship_on_d4 = 0
+    ship_on_d5 = 0
+    ship_on_d6 = 0
+    ship_on_d7 = 0
+    ship_on_d8 = 0
+
+    # Globalize and define ship tracker variables for the e squares so they can be used in other functions
+    global ship_on_e1,ship_on_e2,ship_on_e3,ship_on_e4,ship_on_e5,ship_on_e6,ship_on_e7,ship_on_e8
+    ship_on_e1 = 0
+    ship_on_e2 = 0
+    ship_on_e3 = 0
+    ship_on_e4 = 0
+    ship_on_e5 = 0
+    ship_on_e6 = 0
+    ship_on_e7 = 0
+    ship_on_e8 = 0
+
+    # Globalize and define ship tracker variables for the f squares so they can be used in other functions
+    global ship_on_f1,ship_on_f2,ship_on_f3,ship_on_f4,ship_on_f5,ship_on_f6,ship_on_f7,ship_on_f8
+    ship_on_f1 = 0
+    ship_on_f2 = 0
+    ship_on_f3 = 0
+    ship_on_f4 = 0
+    ship_on_f5 = 0
+    ship_on_f6 = 0
+    ship_on_f7 = 0
+    ship_on_f8 = 0
+
+    # Globalize and define ship tracker variables for the g squares so they can be used in other functions
+    global ship_on_g1,ship_on_g2,ship_on_g3,ship_on_g4,ship_on_g5,ship_on_g6,ship_on_g7,ship_on_g8
+    ship_on_g1 = 0
+    ship_on_g2 = 0
+    ship_on_g3 = 0
+    ship_on_g4 = 0
+    ship_on_g5 = 0
+    ship_on_g6 = 0
+    ship_on_g7 = 0
+    ship_on_g8 = 0
+
+    # Globalize and define ship tracker variables for the h squares so they can be used in other functions
+    global ship_on_h1,ship_on_h2,ship_on_h3,ship_on_h4,ship_on_h5,ship_on_h6,ship_on_h7,ship_on_h8
+    ship_on_h1 = 0
+    ship_on_h2 = 0
+    ship_on_h3 = 0
+    ship_on_h4 = 0
+    ship_on_h5 = 0
+    ship_on_h6 = 0
+    ship_on_h7 = 0
+    ship_on_h8 = 0
+
+
+# Define a function to choose where the user wants to place their ships
+def get_user_ship_properties():
+    print("-Ship Selection-")
+    print("\nBefore we begin the game, you need to choose where you want to place your ships.")
+    print("please note that your coordinate should follow the naming convention LetterNumber ex: a1, e4, c3.")
+    print("You may only select letters between a-h and numbers between 1-8.")
+    print("When you are done entering coordinates, type done or d")
+
+    continue_with_loop = 1
+    global player_grid
+    while continue_with_loop == 1:
+        usr_ship_selection_input = str(input("Please type the coordinate of where you want to place your ship: "))
+
+        global ship_on_a1,ship_on_a2,ship_on_a3,ship_on_a4,ship_on_a5,ship_on_a6,ship_on_a7,ship_on_a8
+        if usr_ship_selection_input == "a1":
+            ship_on_a1 = 1
+            player_grid[row_1][column_a] = "1"
+        if usr_ship_selection_input == "a2":
+            ship_on_a2 = 1
+            player_grid[row_2][column_a] = "1"
+        if usr_ship_selection_input == "a3":
+            ship_on_a3 = 1
+            player_grid[row_3][column_a] = "1"
+        if usr_ship_selection_input == "a4":
+            ship_on_a4 = 1
+            player_grid[row_4][column_a] = "1"
+        if usr_ship_selection_input == "a5":
+            ship_on_a5 = 1
+            player_grid[row_5][column_a] = "1"
+        if usr_ship_selection_input == "a6":
+            ship_on_a6 = 1
+            player_grid[row_6][column_a] = "1"
+        if usr_ship_selection_input == "a7":
+            ship_on_a7 = 1
+            player_grid[row_7][column_a] = "1"
+        if usr_ship_selection_input == "a8":
+            ship_on_a8 = 1
+            player_grid[row_8][column_a] = "1"
+        
+        global ship_on_b1,ship_on_b2,ship_on_b3,ship_on_b4,ship_on_b5,ship_on_b6,ship_on_b7,ship_on_b8
+        if usr_ship_selection_input == "b1":
+            ship_on_b1 = 1
+            player_grid[row_1][column_b] = "1"
+        if usr_ship_selection_input == "b2":
+            ship_on_b2 = 1
+            player_grid[row_2][column_b] = "1"
+        if usr_ship_selection_input == "b3":
+            ship_on_b3 = 1
+            player_grid[row_3][column_b] = "1"
+        if usr_ship_selection_input == "b4":
+            ship_on_b4 = 1
+            player_grid[row_4][column_b] = "1"
+        if usr_ship_selection_input == "b5":
+            ship_on_b5 = 1
+            player_grid[row_5][column_b] = "1"
+        if usr_ship_selection_input == "b6":
+            ship_on_b6 = 1
+            player_grid[row_6][column_b] = "1"
+        if usr_ship_selection_input == "b7":
+            ship_on_b7 = 1
+            player_grid[row_7][column_b] = "1"
+        if usr_ship_selection_input == "b8":
+            ship_on_b8 = 1
+            player_grid[row_8][column_b] = "1"
+        
+        global ship_on_c1,ship_on_c2,ship_on_c3,ship_on_c4,ship_on_c5,ship_on_c6,ship_on_c7,ship_on_c8
+        if usr_ship_selection_input == "c1":
+            ship_on_c1 = 1
+            player_grid[row_1][column_c] = "1"
+        if usr_ship_selection_input == "c2":
+            ship_on_c2 = 1
+            player_grid[row_2][column_c] = "1"
+        if usr_ship_selection_input == "c3":
+            ship_on_c3 = 1
+            player_grid[row_3][column_c] = "1"
+        if usr_ship_selection_input == "c4":
+            ship_on_c4 = 1
+            player_grid[row_4][column_c] = "1"
+        if usr_ship_selection_input == "c5":
+            ship_on_c5 = 1
+            player_grid[row_5][column_c] = "1"
+        if usr_ship_selection_input == "c6":
+            ship_on_c6 = 1
+            player_grid[row_6][column_c] = "1"
+        if usr_ship_selection_input == "c7":
+            ship_on_c7 = 1
+            player_grid[row_7][column_c] = "1"
+        if usr_ship_selection_input == "c8":
+            ship_on_c8 = 1
+            player_grid[row_8][column_c] = "1"
+        
+        global ship_on_d1,ship_on_d2,ship_on_d3,ship_on_d4,ship_on_d5,ship_on_d6,ship_on_d7,ship_on_d8
+        if usr_ship_selection_input == "d1":
+            ship_on_d1 = 1
+            player_grid[row_1][column_d] = "1"
+        if usr_ship_selection_input == "d2":
+            ship_on_d2 = 1
+            player_grid[row_2][column_d] = "1"
+        if usr_ship_selection_input == "d3":
+            ship_on_d3 = 1
+            player_grid[row_3][column_d] = "1"
+        if usr_ship_selection_input == "d4":
+            ship_on_d4 = 1
+            player_grid[row_4][column_d] = "1"
+        if usr_ship_selection_input == "d5":
+            ship_on_d5 = 1
+            player_grid[row_5][column_d] = "1"
+        if usr_ship_selection_input == "d6":
+            ship_on_d6 = 1
+            player_grid[row_6][column_d] = "1"
+        if usr_ship_selection_input == "d7":
+            ship_on_d7 = 1
+            player_grid[row_7][column_d] = "1"
+        if usr_ship_selection_input == "d8":
+            ship_on_d8 = 1
+            player_grid[row_8][column_d] = "1"
+        
+        global ship_on_e1,ship_on_e2,ship_on_e3,ship_on_e4,ship_on_e5,ship_on_e6,ship_on_e7,ship_on_e8
+        if usr_ship_selection_input == "e1":
+            ship_on_e1 = 1
+            player_grid[row_1][column_e] = "1"
+        if usr_ship_selection_input == "e2":
+            ship_on_e2 = 1
+            player_grid[row_2][column_e] = "1"
+        if usr_ship_selection_input == "e3":
+            ship_on_e3 = 1
+            player_grid[row_3][column_e] = "1"
+        if usr_ship_selection_input == "e4":
+            ship_on_e4 = 1
+            player_grid[row_4][column_e] = "1"
+        if usr_ship_selection_input == "e5":
+            ship_on_e5 = 1
+            player_grid[row_5][column_e] = "1"
+        if usr_ship_selection_input == "e6":
+            ship_on_e6 = 1
+            player_grid[row_6][column_e] = "1"
+        if usr_ship_selection_input == "e7":
+            ship_on_e7 = 1
+            player_grid[row_7][column_e] = "1"
+        if usr_ship_selection_input == "e8":
+            ship_on_e8 = 1
+            player_grid[row_8][column_e] = "1"
+        
+        global ship_on_f1,ship_on_f2,ship_on_f3,ship_on_f4,ship_on_f5,ship_on_f6,ship_on_f7,ship_on_f8
+        if usr_ship_selection_input == "f1":
+            ship_on_f1 = 1
+            player_grid[row_1][column_f] = "1"
+        if usr_ship_selection_input == "f2":
+            ship_on_f2 = 1
+            player_grid[row_2][column_f] = "1"
+        if usr_ship_selection_input == "f3":
+            ship_on_f3 = 1
+            player_grid[row_3][column_f] = "1"
+        if usr_ship_selection_input == "f4":
+            ship_on_f4 = 1
+            player_grid[row_4][column_f] = "1"
+        if usr_ship_selection_input == "f5":
+            ship_on_f5 = 1
+            player_grid[row_5][column_f] = "1"
+        if usr_ship_selection_input == "f6":
+            ship_on_f6 = 1
+            player_grid[row_6][column_f] = "1"
+        if usr_ship_selection_input == "f7":
+            ship_on_f7 = 1
+            player_grid[row_7][column_f] = "1"
+        if usr_ship_selection_input == "f8":
+            ship_on_f8 = 1
+            player_grid[row_8][column_f] = "1"
+        
+        global ship_on_g1,ship_on_g2,ship_on_g3,ship_on_g4,ship_on_g5,ship_on_g6,ship_on_g7,ship_on_g8
+        if usr_ship_selection_input == "g1":
+            ship_on_g1 = 1
+            player_grid[row_1][column_g] = "1"
+        if usr_ship_selection_input == "g2":
+            ship_on_g2 = 1
+            player_grid[row_2][column_g] = "1"
+        if usr_ship_selection_input == "g3":
+            ship_on_g3 = 1
+            player_grid[row_3][column_g] = "1"
+        if usr_ship_selection_input == "g4":
+            ship_on_g4 = 1
+            player_grid[row_4][column_g] = "1"
+        if usr_ship_selection_input == "g5":
+            ship_on_g5 = 1
+            player_grid[row_5][column_g] = "1"
+        if usr_ship_selection_input == "g6":
+            ship_on_g6 = 1
+            player_grid[row_6][column_g] = "1"
+        if usr_ship_selection_input == "g7":
+            ship_on_g7 = 1
+            player_grid[row_7][column_g] = "1"
+        if usr_ship_selection_input == "g8":
+            ship_on_g8 = 1
+            player_grid[row_8][column_g] = "1"
+        
+        global ship_on_h1,ship_on_h2,ship_on_h3,ship_on_h4,ship_on_h5,ship_on_h6,ship_on_h7,ship_on_h8
+        if usr_ship_selection_input == "h1":
+            ship_on_h1 = 1
+            player_grid[row_1][column_h] = "1"
+        if usr_ship_selection_input == "h2":
+            ship_on_h2 = 1
+            player_grid[row_2][column_h] = "1"
+        if usr_ship_selection_input == "h3":
+            ship_on_h3 = 1
+            player_grid[row_3][column_h] = "1"
+        if usr_ship_selection_input == "h4":
+            ship_on_h4 = 1
+            player_grid[row_4][column_h] = "1"
+        if usr_ship_selection_input == "h5":
+            ship_on_h5 = 1
+            player_grid[row_5][column_h] = "1"
+        if usr_ship_selection_input == "h6":
+            ship_on_h6 = 1
+            player_grid[row_6][column_h] = "1"
+        if usr_ship_selection_input == "h7":
+            ship_on_h7 = 1
+            player_grid[row_7][column_h] = "1"
+        if usr_ship_selection_input == "h8":
+            ship_on_h8 = 1
+            player_grid[row_8][column_h] = "1"
+
+        if usr_ship_selection_input == "d":
+            continue_with_loop = 0
+        if usr_ship_selection_input == "D":
+            continue_with_loop = 0
+        if usr_ship_selection_input == "done":
+            continue_with_loop = 0
+        if usr_ship_selection_input =="Done":
+            continue_with_loop = 0
+
+
 # Define a function to concisely set the grid properties
 def set_grid_properties():
     # Globalize variables so other functions can access them
@@ -713,13 +1073,29 @@ def apply_grid_clicker_properties():
         master_clickers_list[i].goto(clicker_cors_list[i]) # Send each clicker object to its respective square
 
 
+# Define a function that will print out the grid of ships the user selected in the terminal
+def print_user_grid(player_grid):
+    for row in player_grid:
+        print((" ").join(row))
+
 #####-Setup-#####
+# Create the grid of letters and numbers that will be used to show the player's board
+create_user_grid()
+
+# Set the initial locations and get the locations for where the user wants to place their ship
+set_user_ship_properties()
+get_user_ship_properties()
+
 # Call the function to define coordinates for the graphical display
 set_grid_properties()
 
 # Call the function to create all of the objects a user can click on and apply their properties
 create_grid_clickers()
 apply_grid_clicker_properties()
+
+# Print out the initial grid of the user
+print_user_grid(player_grid)
+
 
 # Create a screen for graphical display, set its background
 import grid as grid
