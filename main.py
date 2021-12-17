@@ -1349,6 +1349,325 @@ def print_user_grid(player_grid):
     for row in player_grid:
         print((" ").join(row))
 
+# Define a function to run when a certain clicker is clicked
+def a1_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("a1_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def a2_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("a2_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def a3_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("a3_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def a4_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("a4_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def a5_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("a5_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def a6_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("a6_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def a7_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("a7_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def a8_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("a8_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def b1_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("b1_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def b2_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("b2_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def b3_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("b3_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def b4_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("b4_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def b5_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("b5_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def b6_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("b6_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def b7_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("b7_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def b8_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("b8_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def c1_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("c1_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def c2_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("c2_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def c3_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("c3_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def c4_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("c4_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def c5_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("c5_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def c6_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("c6_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def c7_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("c7_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def c8_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("c8_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def d1_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("d1_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def d2_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("d2_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def d3_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("d3_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def d4_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("d4_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def d5_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("d5_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def d6_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("d6_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def d7_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("d7_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def d8_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("d8_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def e1_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("e1_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def e2_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("e2_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def e3_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("e3_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def e4_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("e4_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def e5_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("e5_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def e6_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("e6_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def e7_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("e7_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def e8_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("e8_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def f1_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("f1_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def f2_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("f2_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def f3_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("f3_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def f4_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("f4_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def f5_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("f5_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def f6_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("f6_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def f7_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("f7_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def f8_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("f8_clicker clicked")
+# Define a function to run when a certain clicker is clicked
+def g1_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("g1_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def g2_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("g2_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def g3_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("g3_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def g4_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("g4_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def g5_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("g5_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def g6_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("g6_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def g7_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("g7_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def g8_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("g8_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def h1_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("h1_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def h2_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("h2_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def h3_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("h3_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def h4_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("h4_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def h5_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("h5_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def h6_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("h6_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def h7_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("h7_clicker clicked")
+
+# Define a function to run when a certain clicker is clicked
+def h8_clicker_clicked(x,y):
+    if developer_mode == 1:
+        print("h8_clicker clicked")
+
 #####-Setup-#####
 # Create a list of possible coordinates for the user and enemy's ships to be on
 create_coordinates_list()
@@ -1385,6 +1704,71 @@ grid.draw_grid()
 
 
 #####-Game Handling-#####
+# Wait for user to click which square they want to attack
+a1_clicker.onclick(a1_clicker_clicked)
+a2_clicker.onclick(a2_clicker_clicked)
+a3_clicker.onclick(a3_clicker_clicked)
+a4_clicker.onclick(a4_clicker_clicked)
+a5_clicker.onclick(a5_clicker_clicked)
+a6_clicker.onclick(a6_clicker_clicked)
+a7_clicker.onclick(a7_clicker_clicked)
+a8_clicker.onclick(a8_clicker_clicked)
+b1_clicker.onclick(b1_clicker_clicked)
+b2_clicker.onclick(b2_clicker_clicked)
+b3_clicker.onclick(b3_clicker_clicked)
+b4_clicker.onclick(b4_clicker_clicked)
+b5_clicker.onclick(b5_clicker_clicked)
+b6_clicker.onclick(b6_clicker_clicked)
+b7_clicker.onclick(b7_clicker_clicked)
+b8_clicker.onclick(b8_clicker_clicked)
+c1_clicker.onclick(c1_clicker_clicked)
+c2_clicker.onclick(c2_clicker_clicked)
+c3_clicker.onclick(c3_clicker_clicked)
+c4_clicker.onclick(c4_clicker_clicked)
+c5_clicker.onclick(c5_clicker_clicked)
+c6_clicker.onclick(c6_clicker_clicked)
+c7_clicker.onclick(c7_clicker_clicked)
+c8_clicker.onclick(c8_clicker_clicked)
+d1_clicker.onclick(d1_clicker_clicked)
+d2_clicker.onclick(d2_clicker_clicked)
+d3_clicker.onclick(d3_clicker_clicked)
+d4_clicker.onclick(d4_clicker_clicked)
+d5_clicker.onclick(d5_clicker_clicked)
+d6_clicker.onclick(d6_clicker_clicked)
+d7_clicker.onclick(d7_clicker_clicked)
+d8_clicker.onclick(d8_clicker_clicked)
+e1_clicker.onclick(e1_clicker_clicked)
+e2_clicker.onclick(e2_clicker_clicked)
+e3_clicker.onclick(e3_clicker_clicked)
+e4_clicker.onclick(e4_clicker_clicked)
+e5_clicker.onclick(e5_clicker_clicked)
+e6_clicker.onclick(e6_clicker_clicked)
+e7_clicker.onclick(e7_clicker_clicked)
+e8_clicker.onclick(e8_clicker_clicked)
+f1_clicker.onclick(f1_clicker_clicked)
+f2_clicker.onclick(f2_clicker_clicked)
+f3_clicker.onclick(f3_clicker_clicked)
+f4_clicker.onclick(f4_clicker_clicked)
+f5_clicker.onclick(f5_clicker_clicked)
+f6_clicker.onclick(f6_clicker_clicked)
+f7_clicker.onclick(f7_clicker_clicked)
+f8_clicker.onclick(f8_clicker_clicked)
+g1_clicker.onclick(g1_clicker_clicked)
+g2_clicker.onclick(g2_clicker_clicked)
+g3_clicker.onclick(g3_clicker_clicked)
+g4_clicker.onclick(g4_clicker_clicked)
+g5_clicker.onclick(g5_clicker_clicked)
+g6_clicker.onclick(g6_clicker_clicked)
+g7_clicker.onclick(g7_clicker_clicked)
+g8_clicker.onclick(g8_clicker_clicked)
+h1_clicker.onclick(h1_clicker_clicked)
+h2_clicker.onclick(h2_clicker_clicked)
+h3_clicker.onclick(h3_clicker_clicked)
+h4_clicker.onclick(h4_clicker_clicked)
+h5_clicker.onclick(h5_clicker_clicked)
+h6_clicker.onclick(h6_clicker_clicked)
+h7_clicker.onclick(h7_clicker_clicked)
+h8_clicker.onclick(h8_clicker_clicked)
 
 
 
