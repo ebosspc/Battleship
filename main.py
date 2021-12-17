@@ -57,6 +57,18 @@ print("\nLets begin!")
 
 
 #####-Game Config-#####
+def create_coordinates_list():
+    # Define a global list of coordinates to easily grab values from
+    global coordinates_list
+    coordinates_list = ["a1","a2","a3","a4","a5","a6","a7","a8"
+                        "b1","b2","b3","b4","b5","b6","b7","b8",
+                        "c1","c2","c3","c4","c5","c6","c7","c8",
+                        "d1","d2","d3","d4","d5","d6","d7","d8",
+                        "e1","e2","e3","e4","e5","e6","e7","e8",
+                        "f1","f2","f3","f4","f5","f6","f7","f8",
+                        "g1","g2","g3","g4","g5","g6","g7","g8",
+                        "h1","h2","h3","h4","h5","h6","h7","h8",]
+
 # Define a function that will create the grid that the user will set as their own ships
 def create_user_grid():
     # https://trinket.io/python/051179b6d3
@@ -95,7 +107,7 @@ def create_user_grid():
         player_grid.append(["O"] * squares_per_side)
 
 
-# Define a function to set the initial user ship selection
+# Define a function to create tracker variables for the users' ships
 def set_user_ship_properties():
     # Globalize and define ship tracker variables for the a squares so they can be used in other functions
     global ship_on_a1,ship_on_a2,ship_on_a3,ship_on_a4,ship_on_a5,ship_on_a6,ship_on_a7,ship_on_a8
@@ -415,6 +427,265 @@ def get_user_ship_properties():
             continue_with_loop = 0
         if usr_ship_selection_input =="Done":
             continue_with_loop = 0
+
+
+# Define a function to create tracker varliables for the computers' ships
+def set_enemy_ship_properties():
+    # Globalize and define ship tracker variables for the a squares so they can be used in other functions
+    global enemy_ship_on_a1,enemy_ship_on_a2,enemy_ship_on_a3,enemy_ship_on_a4,enemy_ship_on_a5,enemy_ship_on_a6,enemy_ship_on_a7,enemy_ship_on_a8
+    enemy_ship_on_a1 = 0
+    enemy_ship_on_a2 = 0
+    enemy_ship_on_a3 = 0
+    enemy_ship_on_a4 = 0
+    enemy_ship_on_a5 = 0
+    enemy_ship_on_a6 = 0
+    enemy_ship_on_a7 = 0
+    enemy_ship_on_a8 = 0
+
+    # Globalize and define ship tracker variables for the b squares so they can be used in other functions
+    global enemy_ship_on_b1,enemy_ship_on_b2,enemy_ship_on_b3,enemy_ship_on_b4,enemy_ship_on_b5,enemy_ship_on_b6,enemy_ship_on_b7,enemy_ship_on_b8
+    enemy_ship_on_b1 = 0
+    enemy_ship_on_b2 = 0
+    enemy_ship_on_b3 = 0
+    enemy_ship_on_b4 = 0
+    enemy_ship_on_b5 = 0
+    enemy_ship_on_b6 = 0
+    enemy_ship_on_b7 = 0
+    enemy_ship_on_b8 = 0
+
+    # Globalize and define ship tracker variables for the c squares so they can be used in other functions
+    global enemy_ship_on_c1,enemy_ship_on_c2,enemy_ship_on_c3,enemy_ship_on_c4,enemy_ship_on_c5,enemy_ship_on_c6,enemy_ship_on_c7,enemy_ship_on_c8
+    enemy_ship_on_c1 = 0
+    enemy_ship_on_c2 = 0
+    enemy_ship_on_c3 = 0
+    enemy_ship_on_c4 = 0
+    enemy_ship_on_c5 = 0
+    enemy_ship_on_c6 = 0
+    enemy_ship_on_c7 = 0
+    enemy_ship_on_c8 = 0
+
+    # Globalize and define ship tracker variables for the d squares so they can be used in other functions
+    global enemy_ship_on_d1,enemy_ship_on_d2,enemy_ship_on_d3,enemy_ship_on_d4,enemy_ship_on_d5,enemy_ship_on_d6,enemy_ship_on_d7,enemy_ship_on_d8
+    enemy_ship_on_d1 = 0
+    enemy_ship_on_d2 = 0
+    enemy_ship_on_d3 = 0
+    enemy_ship_on_d4 = 0
+    enemy_ship_on_d5 = 0
+    enemy_ship_on_d6 = 0
+    enemy_ship_on_d7 = 0
+    enemy_ship_on_d8 = 0
+
+    # Globalize and define ship tracker variables for the e squares so they can be used in other functions
+    global enemy_ship_on_e1,enemy_ship_on_e2,enemy_ship_on_e3,enemy_ship_on_e4,enemy_ship_on_e5,enemy_ship_on_e6,enemy_ship_on_e7,enemy_ship_on_e8
+    enemy_ship_on_e1 = 0
+    enemy_ship_on_e2 = 0
+    enemy_ship_on_e3 = 0
+    enemy_ship_on_e4 = 0
+    enemy_ship_on_e5 = 0
+    enemy_ship_on_e6 = 0
+    enemy_ship_on_e7 = 0
+    enemy_ship_on_e8 = 0
+
+    # Globalize and define ship tracker variables for the f squares so they can be used in other functions
+    global enemy_ship_on_f1,enemy_ship_on_f2,enemy_ship_on_f3,enemy_ship_on_f4,enemy_ship_on_f5,enemy_ship_on_f6,enemy_ship_on_f7,enemy_ship_on_f8
+    enemy_ship_on_f1 = 0
+    enemy_ship_on_f2 = 0
+    enemy_ship_on_f3 = 0
+    enemy_ship_on_f4 = 0
+    enemy_ship_on_f5 = 0
+    enemy_ship_on_f6 = 0
+    enemy_ship_on_f7 = 0
+    enemy_ship_on_f8 = 0
+
+    # Globalize and define ship tracker variables for the g squares so they can be used in other functions
+    global enemy_ship_on_g1,enemy_ship_on_g2,enemy_ship_on_g3,enemy_ship_on_g4,enemy_ship_on_g5,enemy_ship_on_g6,enemy_ship_on_g7,enemy_ship_on_g8
+    enemy_ship_on_g1 = 0
+    enemy_ship_on_g2 = 0
+    enemy_ship_on_g3 = 0
+    enemy_ship_on_g4 = 0
+    enemy_ship_on_g5 = 0
+    enemy_ship_on_g6 = 0
+    enemy_ship_on_g7 = 0
+    enemy_ship_on_g8 = 0
+
+    # Globalize and define ship tracker variables for the h squares so they can be used in other functions
+    global enemy_ship_on_h1,enemy_ship_on_h2,enemy_ship_on_h3,enemy_ship_on_h4,enemy_ship_on_h5,enemy_ship_on_h6,enemy_ship_on_h7,enemy_ship_on_h8
+    enemy_ship_on_h1 = 0
+    enemy_ship_on_h2 = 0
+    enemy_ship_on_h3 = 0
+    enemy_ship_on_h4 = 0
+    enemy_ship_on_h5 = 0
+    enemy_ship_on_h6 = 0
+    enemy_ship_on_h7 = 0
+    enemy_ship_on_h8 = 0
+
+
+# Define a function to choose where the computer is going to place their ships
+def get_enemy_ship_properties():
+    global enemy_ship_cors
+    enemy_ship_cors = []
+
+    # Generate 10 random values for the coordinates of enemy ships and add them to the enemy coordinates list
+    for i in range(10):
+        rand_cor = rand.choice(coordinates_list)
+        coordinates_list.remove(rand_cor)
+        enemy_ship_cors.append(rand_cor)
+    
+    # Output a message for debugging if the user is in developer mode
+    if developer_mode == 1:
+        print(enemy_ship_cors)
+    
+    # Globalize and set enemy ship variables to contain ships if they are chosen from the random coordinates list
+    global enemy_ship_on_a1,enemy_ship_on_a2,enemy_ship_on_a3,enemy_ship_on_a4,enemy_ship_on_a4,enemy_ship_on_a5,enemy_ship_on_a6,enemy_ship_on_a7,enemy_ship_on_a8
+    if "a1" in enemy_ship_cors:
+        enemy_ship_on_a1 = 1
+    if "a2" in enemy_ship_cors:
+        enemy_ship_on_a2 = 1
+    if "a3" in enemy_ship_cors:
+        enemy_ship_on_a3 = 1
+    if "a4" in enemy_ship_cors:
+        enemy_ship_on_a4 = 1
+    if "a5" in enemy_ship_cors:
+        enemy_ship_on_a5 = 1
+    if "a6" in enemy_ship_cors:
+        enemy_ship_on_a6 = 1
+    if "a7" in enemy_ship_cors:
+        enemy_ship_on_a7 = 1
+    if "a8" in enemy_ship_cors:
+        enemy_ship_on_a8 = 1
+    
+    # Globalize and set enemy ship variables to contain ships if they are chosen from the random coordinates list
+    global enemy_ship_on_b1,enemy_ship_on_b2,enemy_ship_on_b3,enemy_ship_on_b4,enemy_ship_on_b4,enemy_ship_on_b5,enemy_ship_on_b6,enemy_ship_on_b7,enemy_ship_on_b8
+    if "b1" in enemy_ship_cors:
+        enemy_ship_on_b1 = 1
+    if "b2" in enemy_ship_cors:
+        enemy_ship_on_b2 = 1
+    if "b3" in enemy_ship_cors:
+        enemy_ship_on_b3 = 1
+    if "b4" in enemy_ship_cors:
+        enemy_ship_on_b4 = 1
+    if "b5" in enemy_ship_cors:
+        enemy_ship_on_b5 = 1
+    if "b6" in enemy_ship_cors:
+        enemy_ship_on_b6 = 1
+    if "b7" in enemy_ship_cors:
+        enemy_ship_on_b7 = 1
+    if "b8" in enemy_ship_cors:
+        enemy_ship_on_b8 = 1
+    
+    # Globalize and set enemy ship variables to contain ships if they are chosen from the random coordinates list
+    global enemy_ship_on_c1,enemy_ship_on_c2,enemy_ship_on_c3,enemy_ship_on_c4,enemy_ship_on_c4,enemy_ship_on_c5,enemy_ship_on_c6,enemy_ship_on_c7,enemy_ship_on_c8
+    if "c1" in enemy_ship_cors:
+        enemy_ship_on_c1 = 1
+    if "c2" in enemy_ship_cors:
+        enemy_ship_on_c2 = 1
+    if "c3" in enemy_ship_cors:
+        enemy_ship_on_c3 = 1
+    if "c4" in enemy_ship_cors:
+        enemy_ship_on_c4 = 1
+    if "c5" in enemy_ship_cors:
+        enemy_ship_on_c5 = 1
+    if "c6" in enemy_ship_cors:
+        enemy_ship_on_c6 = 1
+    if "c7" in enemy_ship_cors:
+        enemy_ship_on_c7 = 1
+    if "c8" in enemy_ship_cors:
+        enemy_ship_on_c8 = 1
+    
+    # Globalize and set enemy ship variables to contain ships if they are chosen from the random coordinates list
+    global enemy_ship_on_d1,enemy_ship_on_d2,enemy_ship_on_d3,enemy_ship_on_d4,enemy_ship_on_d4,enemy_ship_on_d5,enemy_ship_on_d6,enemy_ship_on_d7,enemy_ship_on_d8
+    if "d1" in enemy_ship_cors:
+        enemy_ship_on_d1 = 1
+    if "d2" in enemy_ship_cors:
+        enemy_ship_on_d2 = 1
+    if "d3" in enemy_ship_cors:
+        enemy_ship_on_d3 = 1
+    if "d4" in enemy_ship_cors:
+        enemy_ship_on_d4 = 1
+    if "d5" in enemy_ship_cors:
+        enemy_ship_on_d5 = 1
+    if "d6" in enemy_ship_cors:
+        enemy_ship_on_d6 = 1
+    if "d7" in enemy_ship_cors:
+        enemy_ship_on_d7 = 1
+    if "d8" in enemy_ship_cors:
+        enemy_ship_on_d8 = 1
+    
+    # Globalize and set enemy ship variables to contain ships if they are chosen from the random coordinates list
+    global enemy_ship_on_e1,enemy_ship_on_e2,enemy_ship_on_e3,enemy_ship_on_e4,enemy_ship_on_e4,enemy_ship_on_e5,enemy_ship_on_e6,enemy_ship_on_e7,enemy_ship_on_e8
+    if "e1" in enemy_ship_cors:
+        enemy_ship_on_e1 = 1
+    if "e2" in enemy_ship_cors:
+        enemy_ship_on_e2 = 1
+    if "e3" in enemy_ship_cors:
+        enemy_ship_on_e3 = 1
+    if "e4" in enemy_ship_cors:
+        enemy_ship_on_e4 = 1
+    if "e5" in enemy_ship_cors:
+        enemy_ship_on_e5 = 1
+    if "e6" in enemy_ship_cors:
+        enemy_ship_on_e6 = 1
+    if "e7" in enemy_ship_cors:
+        enemy_ship_on_e7 = 1
+    if "e8" in enemy_ship_cors:
+        enemy_ship_on_e8 = 1
+    
+    # Globalize and set enemy ship variables to contain ships if they are chosen from the random coordinates list
+    global enemy_ship_on_f1,enemy_ship_on_f2,enemy_ship_on_f3,enemy_ship_on_f4,enemy_ship_on_f4,enemy_ship_on_f5,enemy_ship_on_f6,enemy_ship_on_f7,enemy_ship_on_f8
+    if "f1" in enemy_ship_cors:
+        enemy_ship_on_f1 = 1
+    if "f2" in enemy_ship_cors:
+        enemy_ship_on_f2 = 1
+    if "f3" in enemy_ship_cors:
+        enemy_ship_on_f3 = 1
+    if "f4" in enemy_ship_cors:
+        enemy_ship_on_f4 = 1
+    if "f5" in enemy_ship_cors:
+        enemy_ship_on_f5 = 1
+    if "f6" in enemy_ship_cors:
+        enemy_ship_on_f6 = 1
+    if "f7" in enemy_ship_cors:
+        enemy_ship_on_f7 = 1
+    if "f8" in enemy_ship_cors:
+        enemy_ship_on_f8 = 1
+    
+    # Globalize and set enemy ship variables to contain ships if they are chosen from the random coordinates list
+    global enemy_ship_on_g1,enemy_ship_on_g2,enemy_ship_on_g3,enemy_ship_on_g4,enemy_ship_on_g4,enemy_ship_on_g5,enemy_ship_on_g6,enemy_ship_on_g7,enemy_ship_on_g8
+    if "g1" in enemy_ship_cors:
+        enemy_ship_on_g1 = 1
+    if "g2" in enemy_ship_cors:
+        enemy_ship_on_g2 = 1
+    if "g3" in enemy_ship_cors:
+        enemy_ship_on_g3 = 1
+    if "g4" in enemy_ship_cors:
+        enemy_ship_on_g4 = 1
+    if "g5" in enemy_ship_cors:
+        enemy_ship_on_g5 = 1
+    if "g6" in enemy_ship_cors:
+        enemy_ship_on_g6 = 1
+    if "g7" in enemy_ship_cors:
+        enemy_ship_on_g7 = 1
+    if "g8" in enemy_ship_cors:
+        enemy_ship_on_g8 = 1
+    
+    # Globalize and set enemy ship variables to contain ships if they are chosen from the random coordinates list
+    global enemy_ship_on_h1,enemy_ship_on_h2,enemy_ship_on_h3,enemy_ship_on_h4,enemy_ship_on_h4,enemy_ship_on_h5,enemy_ship_on_h6,enemy_ship_on_h7,enemy_ship_on_h8
+    if "h1" in enemy_ship_cors:
+        enemy_ship_on_h1 = 1
+    if "h2" in enemy_ship_cors:
+        enemy_ship_on_h2 = 1
+    if "h3" in enemy_ship_cors:
+        enemy_ship_on_h3 = 1
+    if "h4" in enemy_ship_cors:
+        enemy_ship_on_h4 = 1
+    if "h5" in enemy_ship_cors:
+        enemy_ship_on_h5 = 1
+    if "h6" in enemy_ship_cors:
+        enemy_ship_on_h6 = 1
+    if "h7" in enemy_ship_cors:
+        enemy_ship_on_h7 = 1
+    if "h8" in enemy_ship_cors:
+        enemy_ship_on_h8 = 1
 
 
 # Define a function to concisely set the grid properties
@@ -1079,12 +1350,19 @@ def print_user_grid(player_grid):
         print((" ").join(row))
 
 #####-Setup-#####
+# Create a list of possible coordinates for the user and enemy's ships to be on
+create_coordinates_list()
+
 # Create the grid of letters and numbers that will be used to show the player's board
 create_user_grid()
 
 # Set the initial locations and get the locations for where the user wants to place their ship
 set_user_ship_properties()
 get_user_ship_properties()
+
+# Set the initial locations and get the locations for where the computer wants to place their ship
+set_enemy_ship_properties()
+get_enemy_ship_properties()
 
 # Call the function to define coordinates for the graphical display
 set_grid_properties()
