@@ -12,21 +12,20 @@ Video of game under 60 seconds- Incomplete
 
 Ensure program meets all requirements according to Google Doc:
 Allow for user input- Complete
-Use color and movement- Incomplete
-Use list indexing- Incomplete
+Use color and movement- Complete
+Use list indexing- Complete
 Manipulate strings- Complete
-Respond to events- WIP
-Reduce Duplication of code by using functions- WIP
+Respond to events- Complete
+Reduce Duplication of code by using functions- Complete
 
 Features:
 Add developer mode and instructions request inputs- Complete (Ethan)
-Add instructions to the game- WIP
-Add screen for graphical display- Incomplete
-Add grid- Incomplete
-Add user input to determine where they want there ships- Incomplete
-Figure out how enemy ships work and do that- Incomplete
-Let enemy fire back- Incomplete
-Abstract a ton of stuff to different files to not clog up main- WIP
-Track hits and misses and ship sinks- Incomplete
-Track if a player wins the game- Incomplete
+Add instructions to the game- Complete (Mikaela)
+Add screen for graphical display- Complete (Ethan)
+Add grid- Complete (Mikaela)
+Add user input to determine where they want their ships - Complete (Ethan)
+Let enemy fire back- Complete (Ethan)
+Abstract a ton of stuff to different files to not clog up main- Complete (Ethan, Mikaela, & Maria)
+Track hits and misses and ship sinks- Complete (Maria)
+Track if a player wins the game- Complete (Maria)
 
