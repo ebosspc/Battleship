@@ -57,6 +57,7 @@ print("\nLets begin!")
 
 
 #####-Game Config-#####
+# Define a function to create a master coordinates list
 def create_coordinates_list():
     # Define a global list of coordinates to easily grab values from
     global coordinates_list
@@ -69,19 +70,39 @@ def create_coordinates_list():
                         "g1","g2","g3","g4","g5","g6","g7","g8",
                         "h1","h2","h3","h4","h5","h6","h7","h8",]
 
+# Create a global variable that tracks the number of enemy ships sunk
+global enemy_ships_sunk
+enemy_ships_sunk = 0
+
+# Create a global variable that tracks the number of user ships sunk
+global user_ships_sunk
+user_ships_sunk = 0
+
 # Define a function that will create the grid that the user will set as their own ships
 def create_user_grid():
-    # https://trinket.io/python/051179b6d3
+    '''
+    The following function was created using a modified verion of code provided by Trinket.
+    An MLA citation is provided below:
+
+    Trinket. "Put Interactive Python Anywhere on the Web." Trinket, 2021, trinket.io/
+    python/051179b6d3. Accessed 19 Dec. 2021.
+    '''
+    
+    '''
+    Define an empty list that will contain the locations of the user's ships
+    A 0 corresponds to no ship at that location
+    A 1 corresponds to a ship at that location
+    An X stands for a hit ship at that location
+    The notation will not change for a miss
+    '''
+    # Import the squares per side variable
     squares_per_side = 8
 
-    #Define an empty list that will contain the locations of the user's ships
-    # A 0 corresponds to no ship at that location
-    # A 1 corresponds to a ship at that location
-    # An X stands for a hit ship at that location
-    # The notation will not change for a miss
+    # Create the user ship grid and globalize it
     global player_grid
     player_grid = []
 
+    # Create tracker variables for the 8 columns
     global column_a,column_b,column_c,column_d,column_e,column_f,column_g,column_h
     column_a = 0
     column_b = 1
@@ -92,6 +113,7 @@ def create_user_grid():
     column_g = 6
     column_h = 7
 
+    # Create tracker variables for the 8 rows
     global row_1,row_2,row_3,row_4,row_5,row_6,row_7,row_8
     row_1 = 7
     row_2 = 6
@@ -204,11 +226,13 @@ def get_user_ship_properties():
     print("\nBefore we begin the game, you need to choose where you want to place your ships.")
     print("please note that your coordinate should follow the naming convention LetterNumber ex: a1, e4, c3.")
     print("You may only select letters between a-h and numbers between 1-8.")
+    print("Please be sure to enter 10 coordinates")
     print("When you are done entering coordinates, type done or d")
 
     continue_with_loop = 1
     global player_grid
     while continue_with_loop == 1:
+        global usr_ship_selection_input
         usr_ship_selection_input = str(input("Please type the coordinate of where you want to place your ship: "))
 
         global ship_on_a1,ship_on_a2,ship_on_a3,ship_on_a4,ship_on_a5,ship_on_a6,ship_on_a7,ship_on_a8
@@ -1360,196 +1384,323 @@ def enemy_turn():
     if enemy_shot == "a1":
         ship_on_a1 = "X"
         player_grid[row_1][column_a] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "a2":
         ship_on_a2 = "X"
         player_grid[row_2][column_a] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "a3":
         ship_on_a3 = "X"
         player_grid[row_3][column_a] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "a4":
         ship_on_a4 = "X"
         player_grid[row_4][column_a] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "a5":
         ship_on_a5 = "X"
         player_grid[row_5][column_a] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "a6":
         ship_on_a6 = "X"
         player_grid[row_6][column_a] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "a7":
         ship_on_a7 = "X"
         player_grid[row_7][column_a] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "a8":
         ship_on_a8 = "X"
         player_grid[row_8][column_a] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "b1":
         ship_on_b1 = "X"
         player_grid[row_1][column_b] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "b2":
         ship_on_a2 = "X"
         player_grid[row_2][column_b] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "b3":
         ship_on_b3 = "X"
         player_grid[row_3][column_b] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "b4":
         ship_on_b4 = "X"
         player_grid[row_4][column_b] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "b5":
         ship_on_b5 = "X"
         player_grid[row_5][column_b] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "b6":
         ship_on_b6 = "X"
         player_grid[row_6][column_b] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "b7":
         ship_on_b7 = "X"
         player_grid[row_7][column_b] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "b8":
         ship_on_b8 = "X"
         player_grid[row_8][column_b] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "c1":
         ship_on_c1 = "X"
         player_grid[row_1][column_c] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "c2":
         ship_on_a2 = "X"
         player_grid[row_2][column_c] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "c3":
         ship_on_c3 = "X"
         player_grid[row_3][column_c] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "c4":
         ship_on_c4 = "X"
         player_grid[row_4][column_c] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "c5":
         ship_on_c5 = "X"
         player_grid[row_5][column_c] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "c6":
         ship_on_c6 = "X"
         player_grid[row_6][column_c] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "c7":
         ship_on_c7 = "X"
         player_grid[row_7][column_c] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "c8":
         ship_on_c8 = "X"
         player_grid[row_8][column_c] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "d1":
         ship_on_d1 = "X"
         player_grid[row_1][column_d] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "d2":
         ship_on_a2 = "X"
         player_grid[row_2][column_d] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "d3":
         ship_on_d3 = "X"
         player_grid[row_3][column_d] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "d4":
         ship_on_d4 = "X"
         player_grid[row_4][column_d] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "d5":
         ship_on_d5 = "X"
         player_grid[row_5][column_d] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "d6":
         ship_on_d6 = "X"
         player_grid[row_6][column_d] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "d7":
         ship_on_d7 = "X"
         player_grid[row_7][column_d] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "d8":
         ship_on_d8 = "X"
         player_grid[row_8][column_d] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "e1":
         ship_on_e1 = "X"
         player_grid[row_1][column_e] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "e2":
         ship_on_a2 = "X"
         player_grid[row_2][column_e] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "e3":
         ship_on_e3 = "X"
         player_grid[row_3][column_e] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "e4":
         ship_on_e4 = "X"
         player_grid[row_4][column_e] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "e5":
         ship_on_e5 = "X"
         player_grid[row_5][column_e] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "e6":
         ship_on_e6 = "X"
         player_grid[row_6][column_e] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "e7":
         ship_on_e7 = "X"
         player_grid[row_7][column_e] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "e8":
         ship_on_e8 = "X"
         player_grid[row_8][column_e] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "f1":
         ship_on_f1 = "X"
         player_grid[row_1][column_f] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "f2":
         ship_on_a2 = "X"
         player_grid[row_2][column_f] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "f3":
         ship_on_f3 = "X"
         player_grid[row_3][column_f] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "f4":
         ship_on_f4 = "X"
         player_grid[row_4][column_f] = "X"
     if enemy_shot == "f5":
         ship_on_f5 = "X"
         player_grid[row_5][column_f] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "f6":
         ship_on_f6 = "X"
         player_grid[row_6][column_f] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "f7":
         ship_on_f7 = "X"
         player_grid[row_7][column_f] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "f8":
         ship_on_f8 = "X"
         player_grid[row_8][column_f] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "g1":
         ship_on_g1 = "X"
         player_grid[row_1][column_g] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "g2":
         ship_on_a2 = "X"
         player_grid[row_2][column_g] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "g3":
         ship_on_g3 = "X"
         player_grid[row_3][column_g] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "g4":
         ship_on_g4 = "X"
         player_grid[row_4][column_g] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "g5":
         ship_on_g5 = "X"
         player_grid[row_5][column_g] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "g6":
         ship_on_g6 = "X"
         player_grid[row_6][column_g] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "g7":
         ship_on_g7 = "X"
         player_grid[row_7][column_g] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "g8":
         ship_on_g8 = "X"
         player_grid[row_8][column_g] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "h1":
         ship_on_h1 = "X"
         player_grid[row_1][column_h] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "h2":
         ship_on_a2 = "X"
         player_grid[row_2][column_h] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "h3":
         ship_on_h3 = "X"
         player_grid[row_3][column_h] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "h4":
         ship_on_h4 = "X"
         player_grid[row_4][column_h] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "h5":
         ship_on_h5 = "X"
         player_grid[row_5][column_h] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "h6":
         ship_on_h6 = "X"
         player_grid[row_6][column_h] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "h7":
         ship_on_h7 = "X"
         player_grid[row_7][column_h] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     if enemy_shot == "h8":
         ship_on_h8 = "X"
         player_grid[row_8][column_h] = "X"
+        if (enemy_shot == usr_ship_selection_input):
+          user_ships_sunk =+ 1
     
+    # Print information regarding the user's ship grid
     print("Your ship grid: ")
     print_user_grid(player_grid)
     
@@ -1564,7 +1715,16 @@ def a1_clicker_clicked(x,y):
     if enemy_ship_on_a1 == 1:
         # Display the ship has been hit
         a1_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on a1")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1573,6 +1733,9 @@ def a1_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         a1_clicker.hideturtle()
         print("Miss on a1")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1587,7 +1750,16 @@ def a2_clicker_clicked(x,y):
     if enemy_ship_on_a2 == 1:
         # Display the ship has been hit
         a2_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on a2")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1596,6 +1768,9 @@ def a2_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         a2_clicker.hideturtle()
         print("Miss on a2")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1610,7 +1785,16 @@ def a3_clicker_clicked(x,y):
     if enemy_ship_on_a3 == 1:
         # Display the ship has been hit
         a3_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on a3")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1619,6 +1803,9 @@ def a3_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         a3_clicker.hideturtle()
         print("Miss on a3")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1633,7 +1820,16 @@ def a4_clicker_clicked(x,y):
     if enemy_ship_on_a4 == 1:
         # Display the ship has been hit
         a4_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on a4")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1642,6 +1838,9 @@ def a4_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         a4_clicker.hideturtle()
         print("Miss on a4")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1656,7 +1855,16 @@ def a5_clicker_clicked(x,y):
     if enemy_ship_on_a5 == 1:
         # Display the ship has been hit
         a5_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on a5")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1665,6 +1873,9 @@ def a5_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         a5_clicker.hideturtle()
         print("Miss on a5")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1679,7 +1890,16 @@ def a6_clicker_clicked(x,y):
     if enemy_ship_on_a6 == 1:
         # Display the ship has been hit
         a6_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on a6")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1688,6 +1908,9 @@ def a6_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         a6_clicker.hideturtle()
         print("Miss on a6")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1702,7 +1925,16 @@ def a7_clicker_clicked(x,y):
     if enemy_ship_on_a7 == 1:
         # Display the ship has been hit
         a7_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on a7")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1711,6 +1943,9 @@ def a7_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         a7_clicker.hideturtle()
         print("Miss on a7")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1725,7 +1960,16 @@ def a8_clicker_clicked(x,y):
     if enemy_ship_on_a8 == 1:
         # Display the ship has been hit
         a8_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on a8")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1734,6 +1978,9 @@ def a8_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         a8_clicker.hideturtle()
         print("Miss on a8")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1748,7 +1995,16 @@ def b1_clicker_clicked(x,y):
     if enemy_ship_on_b1 == 1:
         # Display the ship has been hit
         b1_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on b1")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1757,6 +2013,9 @@ def b1_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         b1_clicker.hideturtle()
         print("Miss on b1")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1771,7 +2030,16 @@ def b2_clicker_clicked(x,y):
     if enemy_ship_on_b2 == 1:
         # Display the ship has been hit
         b2_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on b2")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1780,6 +2048,9 @@ def b2_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         b2_clicker.hideturtle()
         print("Miss on b2")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1794,7 +2065,16 @@ def b3_clicker_clicked(x,y):
     if enemy_ship_on_b3 == 1:
         # Display the ship has been hit
         b3_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on b3")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1803,6 +2083,9 @@ def b3_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         b3_clicker.hideturtle()
         print("Miss on b3")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1817,7 +2100,16 @@ def b4_clicker_clicked(x,y):
     if enemy_ship_on_b4 == 1:
         # Display the ship has been hit
         b4_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on b4")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1826,6 +2118,9 @@ def b4_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         b4_clicker.hideturtle()
         print("Miss on b4")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1840,7 +2135,16 @@ def b5_clicker_clicked(x,y):
     if enemy_ship_on_b5 == 1:
         # Display the ship has been hit
         b5_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on b5")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1849,6 +2153,9 @@ def b5_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         b5_clicker.hideturtle()
         print("Miss on b5")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1863,7 +2170,16 @@ def b6_clicker_clicked(x,y):
     if enemy_ship_on_b6 == 1:
         # Display the ship has been hit
         b6_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on b6")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1872,6 +2188,9 @@ def b6_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         b6_clicker.hideturtle()
         print("Miss on b6")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1886,7 +2205,16 @@ def b7_clicker_clicked(x,y):
     if enemy_ship_on_b7 == 1:
         # Display the ship has been hit
         b7_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on b7")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1895,6 +2223,9 @@ def b7_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         b7_clicker.hideturtle()
         print("Miss on b7")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1909,7 +2240,16 @@ def b8_clicker_clicked(x,y):
     if enemy_ship_on_b8 == 1:
         # Display the ship has been hit
         b8_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on b8")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1918,6 +2258,9 @@ def b8_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         b8_clicker.hideturtle()
         print("Miss on b8")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1932,7 +2275,16 @@ def c1_clicker_clicked(x,y):
     if enemy_ship_on_c1 == 1:
         # Display the ship has been hit
         c1_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on c1")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1941,6 +2293,9 @@ def c1_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         c1_clicker.hideturtle()
         print("Miss on c1")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1955,7 +2310,16 @@ def c2_clicker_clicked(x,y):
     if enemy_ship_on_c2 == 1:
         # Display the ship has been hit
         c2_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on c2")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1964,6 +2328,9 @@ def c2_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         c2_clicker.hideturtle()
         print("Miss on c2")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1978,7 +2345,16 @@ def c3_clicker_clicked(x,y):
     if enemy_ship_on_c3 == 1:
         # Display the ship has been hit
         c3_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on c3")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -1987,6 +2363,9 @@ def c3_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         c3_clicker.hideturtle()
         print("Miss on c3")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2001,7 +2380,16 @@ def c4_clicker_clicked(x,y):
     if enemy_ship_on_c4 == 1:
         # Display the ship has been hit
         c4_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on c4")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2010,6 +2398,9 @@ def c4_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         c4_clicker.hideturtle()
         print("Miss on c4")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2024,7 +2415,16 @@ def c5_clicker_clicked(x,y):
     if enemy_ship_on_c5 == 1:
         # Display the ship has been hit
         c5_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on c5")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2033,6 +2433,9 @@ def c5_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         c5_clicker.hideturtle()
         print("Miss on c5")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2047,7 +2450,16 @@ def c6_clicker_clicked(x,y):
     if enemy_ship_on_c6 == 1:
         # Display the ship has been hit
         c6_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on c6")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2056,6 +2468,9 @@ def c6_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         c6_clicker.hideturtle()
         print("Miss on c6")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2070,7 +2485,16 @@ def c7_clicker_clicked(x,y):
     if enemy_ship_on_c7 == 1:
         # Display the ship has been hit
         c7_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on c7")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2079,6 +2503,9 @@ def c7_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         c7_clicker.hideturtle()
         print("Miss on c7")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2093,7 +2520,16 @@ def c8_clicker_clicked(x,y):
     if enemy_ship_on_c8 == 1:
         # Display the ship has been hit
         c8_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on c8")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2102,6 +2538,9 @@ def c8_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         c8_clicker.hideturtle()
         print("Miss on c8")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2116,7 +2555,16 @@ def d1_clicker_clicked(x,y):
     if enemy_ship_on_d1 == 1:
         # Display the ship has been hit
         d1_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on d1")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2125,6 +2573,9 @@ def d1_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         d1_clicker.hideturtle()
         print("Miss on d1")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2139,7 +2590,16 @@ def d2_clicker_clicked(x,y):
     if enemy_ship_on_d2 == 1:
         # Display the ship has been hit
         d2_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on d2")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2148,6 +2608,9 @@ def d2_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         d2_clicker.hideturtle()
         print("Miss on d2")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2162,7 +2625,16 @@ def d3_clicker_clicked(x,y):
     if enemy_ship_on_d3 == 1:
         # Display the ship has been hit
         d3_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on d3")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2171,6 +2643,9 @@ def d3_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         d3_clicker.hideturtle()
         print("Miss on d3")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2185,7 +2660,16 @@ def d4_clicker_clicked(x,y):
     if enemy_ship_on_d4 == 1:
         # Display the ship has been hit
         d4_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on d4")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2194,6 +2678,9 @@ def d4_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         d4_clicker.hideturtle()
         print("Miss on d4")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2208,7 +2695,16 @@ def d5_clicker_clicked(x,y):
     if enemy_ship_on_d5 == 1:
         # Display the ship has been hit
         d5_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on d5")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2217,6 +2713,9 @@ def d5_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         d5_clicker.hideturtle()
         print("Miss on d5")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2231,7 +2730,16 @@ def d6_clicker_clicked(x,y):
     if enemy_ship_on_d6 == 1:
         # Display the ship has been hit
         d6_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on d6")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2240,6 +2748,9 @@ def d6_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         d6_clicker.hideturtle()
         print("Miss on d6")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2254,7 +2765,16 @@ def d7_clicker_clicked(x,y):
     if enemy_ship_on_d7 == 1:
         # Display the ship has been hit
         d7_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on d7")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2263,6 +2783,9 @@ def d7_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         d7_clicker.hideturtle()
         print("Miss on d7")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2277,7 +2800,16 @@ def d8_clicker_clicked(x,y):
     if enemy_ship_on_d8 == 1:
         # Display the ship has been hit
         d8_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on d8")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2286,6 +2818,9 @@ def d8_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         d8_clicker.hideturtle()
         print("Miss on d8")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2300,7 +2835,16 @@ def e1_clicker_clicked(x,y):
     if enemy_ship_on_e1 == 1:
         # Display the ship has been hit
         e1_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on e1")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2309,6 +2853,9 @@ def e1_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         e1_clicker.hideturtle()
         print("Miss on e1")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2323,7 +2870,16 @@ def e2_clicker_clicked(x,y):
     if enemy_ship_on_e2 == 1:
         # Display the ship has been hit
         e2_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on e2")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2332,6 +2888,9 @@ def e2_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         e2_clicker.hideturtle()
         print("Miss on e2")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2346,7 +2905,16 @@ def e3_clicker_clicked(x,y):
     if enemy_ship_on_e3 == 1:
         # Display the ship has been hit
         e3_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on e3")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2355,6 +2923,9 @@ def e3_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         e3_clicker.hideturtle()
         print("Miss on e3")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2369,7 +2940,16 @@ def e4_clicker_clicked(x,y):
     if enemy_ship_on_e4 == 1:
         # Display the ship has been hit
         e4_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on e4")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2378,6 +2958,9 @@ def e4_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         e4_clicker.hideturtle()
         print("Miss on e4")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2392,7 +2975,16 @@ def e5_clicker_clicked(x,y):
     if enemy_ship_on_e5 == 1:
         # Display the ship has been hit
         e5_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on e5")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2401,6 +2993,9 @@ def e5_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         e5_clicker.hideturtle()
         print("Miss on e5")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2415,7 +3010,16 @@ def e6_clicker_clicked(x,y):
     if enemy_ship_on_e6 == 1:
         # Display the ship has been hit
         e6_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on e6")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2424,6 +3028,9 @@ def e6_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         e6_clicker.hideturtle()
         print("Miss on e6")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2438,7 +3045,16 @@ def e7_clicker_clicked(x,y):
     if enemy_ship_on_e7 == 1:
         # Display the ship has been hit
         e7_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on e7")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2447,6 +3063,9 @@ def e7_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         e7_clicker.hideturtle()
         print("Miss on e7")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2461,7 +3080,16 @@ def e8_clicker_clicked(x,y):
     if enemy_ship_on_e8 == 1:
         # Display the ship has been hit
         e8_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on e8")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2470,6 +3098,9 @@ def e8_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         e8_clicker.hideturtle()
         print("Miss on e8")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2484,7 +3115,16 @@ def f1_clicker_clicked(x,y):
     if enemy_ship_on_f1 == 1:
         # Display the ship has been hit
         f1_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on f1")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2493,6 +3133,9 @@ def f1_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         f1_clicker.hideturtle()
         print("Miss on f1")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2507,7 +3150,16 @@ def f2_clicker_clicked(x,y):
     if enemy_ship_on_f2 == 1:
         # Display the ship has been hit
         f2_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on f2")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2516,6 +3168,9 @@ def f2_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         f2_clicker.hideturtle()
         print("Miss on f2")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2530,7 +3185,16 @@ def f3_clicker_clicked(x,y):
     if enemy_ship_on_f3 == 1:
         # Display the ship has been hit
         f3_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on f3")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2539,6 +3203,9 @@ def f3_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         f3_clicker.hideturtle()
         print("Miss on f3")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2553,7 +3220,16 @@ def f4_clicker_clicked(x,y):
     if enemy_ship_on_f4 == 1:
         # Display the ship has been hit
         f4_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on f4")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2562,6 +3238,9 @@ def f4_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         f4_clicker.hideturtle()
         print("Miss on f4")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2576,7 +3255,16 @@ def f5_clicker_clicked(x,y):
     if enemy_ship_on_f5 == 1:
         # Display the ship has been hit
         f5_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on f5")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2585,6 +3273,9 @@ def f5_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         f5_clicker.hideturtle()
         print("Miss on f5")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2599,7 +3290,16 @@ def f6_clicker_clicked(x,y):
     if enemy_ship_on_f6 == 1:
         # Display the ship has been hit
         f6_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on f6")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2608,6 +3308,9 @@ def f6_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         f6_clicker.hideturtle()
         print("Miss on f6")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2622,7 +3325,16 @@ def f7_clicker_clicked(x,y):
     if enemy_ship_on_f7 == 1:
         # Display the ship has been hit
         f7_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on f7")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2631,6 +3343,9 @@ def f7_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         f7_clicker.hideturtle()
         print("Miss on f7")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2645,7 +3360,16 @@ def f8_clicker_clicked(x,y):
     if enemy_ship_on_f8 == 1:
         # Display the ship has been hit
         f8_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on f8")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2654,6 +3378,9 @@ def f8_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         f8_clicker.hideturtle()
         print("Miss on f8")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2668,7 +3395,16 @@ def g1_clicker_clicked(x,y):
     if enemy_ship_on_g1 == 1:
         # Display the ship has been hit
         g1_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on g1")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2677,6 +3413,9 @@ def g1_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         g1_clicker.hideturtle()
         print("Miss on g1")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2691,7 +3430,16 @@ def g2_clicker_clicked(x,y):
     if enemy_ship_on_g2 == 1:
         # Display the ship has been hit
         g2_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on g2")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2700,6 +3448,9 @@ def g2_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         g2_clicker.hideturtle()
         print("Miss on g2")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2714,7 +3465,16 @@ def g3_clicker_clicked(x,y):
     if enemy_ship_on_g3 == 1:
         # Display the ship has been hit
         g3_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on g3")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2723,6 +3483,9 @@ def g3_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         g3_clicker.hideturtle()
         print("Miss on g3")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2737,7 +3500,16 @@ def g4_clicker_clicked(x,y):
     if enemy_ship_on_g4 == 1:
         # Display the ship has been hit
         g4_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on g4")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2746,6 +3518,9 @@ def g4_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         g4_clicker.hideturtle()
         print("Miss on g4")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2760,7 +3535,16 @@ def g5_clicker_clicked(x,y):
     if enemy_ship_on_g5 == 1:
         # Display the ship has been hit
         g5_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on g5")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2769,6 +3553,9 @@ def g5_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         g5_clicker.hideturtle()
         print("Miss on g5")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2783,7 +3570,16 @@ def g6_clicker_clicked(x,y):
     if enemy_ship_on_g6 == 1:
         # Display the ship has been hit
         g6_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on g6")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2792,6 +3588,9 @@ def g6_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         g6_clicker.hideturtle()
         print("Miss on g6")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2806,7 +3605,16 @@ def g7_clicker_clicked(x,y):
     if enemy_ship_on_g7 == 1:
         # Display the ship has been hit
         g7_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on g7")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2815,6 +3623,9 @@ def g7_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         g7_clicker.hideturtle()
         print("Miss on g7")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2829,7 +3640,16 @@ def g8_clicker_clicked(x,y):
     if enemy_ship_on_g8 == 1:
         # Display the ship has been hit
         g8_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on g8")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2838,6 +3658,9 @@ def g8_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         g8_clicker.hideturtle()
         print("Miss on g8")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2852,7 +3675,16 @@ def h1_clicker_clicked(x,y):
     if enemy_ship_on_h1 == 1:
         # Display the ship has been hit
         h1_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on h1")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2861,6 +3693,9 @@ def h1_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         h1_clicker.hideturtle()
         print("Miss on h1")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2875,7 +3710,16 @@ def h2_clicker_clicked(x,y):
     if enemy_ship_on_h2 == 1:
         # Display the ship has been hit
         h2_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on h2")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2884,6 +3728,9 @@ def h2_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         h2_clicker.hideturtle()
         print("Miss on h2")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2898,7 +3745,16 @@ def h3_clicker_clicked(x,y):
     if enemy_ship_on_h3 == 1:
         # Display the ship has been hit
         h3_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on h3")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2907,6 +3763,9 @@ def h3_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         h3_clicker.hideturtle()
         print("Miss on h3")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2921,7 +3780,16 @@ def h4_clicker_clicked(x,y):
     if enemy_ship_on_h4 == 1:
         # Display the ship has been hit
         h4_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on h4")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2930,6 +3798,9 @@ def h4_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         h4_clicker.hideturtle()
         print("Miss on h4")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2944,7 +3815,16 @@ def h5_clicker_clicked(x,y):
     if enemy_ship_on_h5 == 1:
         # Display the ship has been hit
         h5_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on h5")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2953,6 +3833,9 @@ def h5_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         h5_clicker.hideturtle()
         print("Miss on h5")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2967,7 +3850,16 @@ def h6_clicker_clicked(x,y):
     if enemy_ship_on_h6 == 1:
         # Display the ship has been hit
         h6_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on h6")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2976,6 +3868,9 @@ def h6_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         h6_clicker.hideturtle()
         print("Miss on h6")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2990,7 +3885,16 @@ def h7_clicker_clicked(x,y):
     if enemy_ship_on_h7 == 1:
         # Display the ship has been hit
         h7_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on h7")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -2999,6 +3903,9 @@ def h7_clicker_clicked(x,y):
         #Remove the option to fire here in the future and display that the user missed
         h7_clicker.hideturtle()
         print("Miss on h7")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -3013,7 +3920,16 @@ def h8_clicker_clicked(x,y):
     if enemy_ship_on_h8 == 1:
         # Display the ship has been hit
         h8_clicker.fillcolor("red")
+        
+        # Increase the ship sinker counter
+        global enemy_ships_sunk
+        enemy_ships_sunk += 1
+
+        # Output message in the terminal to let user know they hit a ship
         print("Hit on h8")
+
+        # Check if the game has terminated
+        game_termination()
 
         # Let the opponent play their turn
         enemy_turn()
@@ -3023,8 +3939,21 @@ def h8_clicker_clicked(x,y):
         h8_clicker.hideturtle()
         print("Miss on h8")
 
+        # Check if the game has terminated
+        game_termination()
+
         # Let the opponent play their turn
         enemy_turn()
+
+# Define a function that determines when the game will terminate
+def game_termination():
+    # Print a message if the user won
+    if (enemy_ships_sunk == 10):
+        print("Congrats! You found all of the ships")
+    
+    # Print a message if the user lost
+    elif (user_ships_sunk == 10):
+        print("Sorry, all your ships have been found. You lost")
 
 #####-Setup-#####
 # Create a list of possible coordinates for the user and enemy's ships to be on
@@ -3127,7 +4056,6 @@ h5_clicker.onclick(h5_clicker_clicked)
 h6_clicker.onclick(h6_clicker_clicked)
 h7_clicker.onclick(h7_clicker_clicked)
 h8_clicker.onclick(h8_clicker_clicked)
-
 
 
 # Keep display running and persistent, listening for user inputs
