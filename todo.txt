@@ -2,13 +2,13 @@ TO-DO list
 
 
 Complete all parts of the google doc:
-Formatting Google Doc- WIP
-Question A- Incomplete
-Question B- Incomplete
-Question C- Incomplete
-Question D- Incomplete
-Question E- Incomplete
-Video of game under 60 seconds- Incomplete
+Formatting Google Doc- Complete
+Question A- Complete
+Question B- Complete
+Question C- Complete
+Question D- Complete
+Question E- Complete
+Video of game under 60 seconds- Complete
 
 Ensure program meets all requirements according to Google Doc:
 Allow for user input- Complete
